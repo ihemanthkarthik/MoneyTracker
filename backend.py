@@ -115,3 +115,13 @@ def frgtPwd(pwd_rst):
             return 1
         else:
             return 0
+
+def frgtUsn(email):
+    global connector, table
+
+    username = connector.execute("SELECT Username from Users WHERE Email = :email", email)
+
+    if (len(username) > 0):
+        return username
+    else:
+        return 0
