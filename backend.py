@@ -77,3 +77,18 @@ def regUser(usr_det):
             return 0
     else:
         return -1
+
+def login(login_creds):
+    global connector, table
+    username = login_creds[0]
+    password = login_creds[1]
+
+    userID = connector.execute("SELECT UserID FROM Users WHERE UserID = :username AND Password = :password", username,
+                               password)
+
+    if userID > 0:
+        connector.execute("INSERT INTO Logs VALUES(:userID, 0, 'User Logged  in Successfully',datetime('now'))", userID)
+        connector.commit()
+        return 1
+    else:
+        return 0
