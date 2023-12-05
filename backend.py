@@ -92,3 +92,26 @@ def login(login_creds):
         return 1
     else:
         return 0
+
+def frgtPwd(pwd_rst):
+    global connector, table
+
+    username = pwd_rst[0]
+    DOB = pwd_rst[1]
+    newPassword = pwd_rst[2]
+
+    userID = connector.execute("SELECT UserID FROM Users WHERE UserName = :username AND DOB = :DOB", username, DOB)
+
+    if userID > 0:
+        connector.execute("UPDATE Users SET Password = :newPassword WHERE WHERE UserID = :username AND DOB = :DOB",
+                          username, DOB, newPassword)
+
+        pwd_rst = connector.rowcount
+
+        if pwd_rst > 0:
+            connector.execute("INSERT INTO Logs VALUES(:UserID, 0, 'User reset password successfully',datetime('now'))",
+                              userID)
+            connector.commit()
+            return 1
+        else:
+            return 0
