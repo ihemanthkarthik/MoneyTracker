@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unittest.loader._FailedTest-20240122150608" tests="1" file="unittest/loader.py" time="0.004" timestamp="2024-01-22T15:06:08" failures="0" errors="1" skipped="0">
+	<testcase classname="unittest.loader._FailedTest" name="authentication_tests" time="0.004" timestamp="2024-01-22T15:06:08">
+		<error type="ImportError" message="Failed to import test module: authentication_tests
+Traceback (most recent call last):
+  File &quot;d:\code repository\moneytracker\src\unittest\python\authentication_tests.py&quot;, line 5, in &lt;module&gt;
+    from authentication import authorization
+  File &quot;d:\code repository\moneytracker\src\main\python\authentication.py&quot;, line 2, in &lt;module&gt;
+    import pyodbc as dbe
+ModuleNotFoundError: No module named 'pyodbc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;C:\Users\heman\anaconda3\Lib\unittest\loader.py&quot;, line 154, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;d:\code repository\moneytracker\src\unittest\python\authentication_tests.py&quot;, line 7, in &lt;module&gt;
+    from ...main.python.authentication import authorization
+ImportError: attempted relative import with no known parent package
+"><![CDATA[Traceback (most recent call last):
+  File "C:\Users\heman\anaconda3\Lib\unittest\case.py", line 57, in testPartExecutor
+    yield
+  File "C:\Users\heman\anaconda3\Lib\unittest\case.py", line 623, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\heman\anaconda3\Lib\unittest\case.py", line 579, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\heman\anaconda3\Lib\unittest\loader.py", line 34, in testFailure
+    raise self._exception
+    ^^^^^^^^^^^^^^^^^
+ImportError: Failed to import test module: authentication_tests
+Traceback (most recent call last):
+  File "d:\code repository\moneytracker\src\unittest\python\authentication_tests.py", line 5, in <module>
+    from authentication import authorization
+  File "d:\code repository\moneytracker\src\main\python\authentication.py", line 2, in <module>
+    import pyodbc as dbe
+ModuleNotFoundError: No module named 'pyodbc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\heman\anaconda3\Lib\unittest\loader.py", line 154, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\code repository\moneytracker\src\unittest\python\authentication_tests.py", line 7, in <module>
+    from ...main.python.authentication import authorization
+ImportError: attempted relative import with no known parent package
+
+]]></error>
+	</testcase>
+</testsuite>

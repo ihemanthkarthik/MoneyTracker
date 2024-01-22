@@ -20,7 +20,13 @@ creating MoneyTracker-1.0.dev0
 creating MoneyTracker-1.0.dev0\MoneyTracker.egg-info
 copying files to MoneyTracker-1.0.dev0...
 copying __init__.py -> MoneyTracker-1.0.dev0
+copying authentication.py -> MoneyTracker-1.0.dev0
+copying connection.py -> MoneyTracker-1.0.dev0
+copying controller.py -> MoneyTracker-1.0.dev0
+copying logger.py -> MoneyTracker-1.0.dev0
+copying main.py -> MoneyTracker-1.0.dev0
 copying setup.py -> MoneyTracker-1.0.dev0
+copying setupdb.py -> MoneyTracker-1.0.dev0
 copying MoneyTracker.egg-info\PKG-INFO -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
 copying MoneyTracker.egg-info\SOURCES.txt -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
 copying MoneyTracker.egg-info\dependency_links.txt -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
