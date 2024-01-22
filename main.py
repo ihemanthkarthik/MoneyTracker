@@ -1,1 +1,0 @@
-print("Welcome to Money Tracker! \nAn easy way to track your money")
