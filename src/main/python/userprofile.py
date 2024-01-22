@@ -89,3 +89,40 @@ class userProfile:
 
         except Exception as e:
             print(e)
+
+    # Delete Account
+    def delAccount(conn, cur, userID):
+        try:
+            while True:
+
+                confirm = \
+                input("WARNING: This will delete your account permanently. Would you like to proceed (Y/N)?")[
+                    0].upper()
+
+                if confirm[0] == "Y" or confirm[0] == "N":
+                    break
+                else:
+                    print("Invalid choice! Please enter Y  or N ")
+                    continue
+
+            if confirm[0] == "Y":
+                cur.execute("DELETE FROM Users WHERE UserID = ?", (userID,))
+
+                usrDel = cur.rowcount
+
+                if usrDel > 0:
+                    cur.execute("DELETE FROM BankDetails WHERE UserID = ?", (userID,))
+                    cur.execute("DELETE FROM Statement WHERE UserID = ?", (userID,))
+                    cur.execute("DELETE FROM ExpenseCategories WHERE UserID = ?", (userID,))
+                    log.logger.insertlog(conn=conn, cur=cur, userID=userID, transID=0,
+                                         message="User Account deleted successfully")
+                    conn.commit()
+                    print("Your profile has been deleted successfully!")
+                    exit()
+                else:
+                    raise dbe.OperationalError("User Profle Deletion Failed")
+            else:
+                print("Action Cancelled!")
+
+        except Exception as e:
+            print(e)
