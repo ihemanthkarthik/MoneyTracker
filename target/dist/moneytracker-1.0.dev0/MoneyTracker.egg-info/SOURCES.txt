@@ -6,6 +6,7 @@ logger.py
 main.py
 setup.py
 setupdb.py
+userprofile.py
 MoneyTracker.egg-info/PKG-INFO
 MoneyTracker.egg-info/SOURCES.txt
 MoneyTracker.egg-info/dependency_links.txt

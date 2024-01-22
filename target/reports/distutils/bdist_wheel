@@ -14,6 +14,7 @@ copying controller.py -> build\lib
 copying logger.py -> build\lib
 copying main.py -> build\lib
 copying setupdb.py -> build\lib
+copying userprofile.py -> build\lib
 copying __init__.py -> build\lib
 d:\code repository\moneytracker\.pybuilder\plugins\cpython-3.11.5.final.0\Lib\site-packages\setuptools\_distutils\cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
 !!
@@ -39,6 +40,7 @@ copying build\lib\controller.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\logger.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\main.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\setupdb.py -> build\bdist.win-amd64\wheel\.
+copying build\lib\userprofile.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\__init__.py -> build\bdist.win-amd64\wheel\.
 running install_egg_info
 running egg_info
@@ -59,6 +61,7 @@ adding 'controller.py'
 adding 'logger.py'
 adding 'main.py'
 adding 'setupdb.py'
+adding 'userprofile.py'
 adding 'MoneyTracker-1.0.dev0.dist-info/METADATA'
 adding 'MoneyTracker-1.0.dev0.dist-info/WHEEL'
 adding 'MoneyTracker-1.0.dev0.dist-info/namespace_packages.txt'

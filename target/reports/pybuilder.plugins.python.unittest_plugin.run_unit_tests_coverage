@@ -3,9 +3,10 @@ Name                Stmts   Miss  Cover
 __init__.py             0      0   100%
 authentication.py     107    107     0%
 connection.py          21     21     0%
-controller.py          58     58     0%
+controller.py          87     87     0%
 logger.py               8      8     0%
 main.py                12     12     0%
 setupdb.py             19     19     0%
+userprofile.py         14     14     0%
 ---------------------------------------
-TOTAL                 225    225     0%
+TOTAL                 268    268     0%

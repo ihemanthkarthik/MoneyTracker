@@ -5,30 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb050256-1fcd-496f-befe-e52e5fac719e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/python/authentication.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/connection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/python/setupDB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unittest/python/authentication_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/python/userprofile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/dependency_links.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/dependency_links.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/namespace_packages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/namespace_packages.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/top_level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/dist/MoneyTracker-1.0.dev0-py3-none-any.whl" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/dist/MoneyTracker-1.0.dev0-py3-none-any.whl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/dist/MoneyTracker-1.0.dev0.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/dist/MoneyTracker-1.0.dev0.tar.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/distutils/bdist_wheel" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/distutils/bdist_wheel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/distutils/sdist" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/distutils/sdist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/moneytracker_coverage" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/moneytracker_coverage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/moneytracker_coverage.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/moneytracker_coverage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/moneytracker_coverage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/moneytracker_coverage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/unittest" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/unittest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/unittest.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/unittest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/python/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/python/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -65,10 +45,11 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python tests.Python tests for src.unittest.python.authentication_tests.MyTestCase.TestLoginFunction.test_successful_login.executor": "Run",
     "Python tests.Python tests for src.unittest.python.authentication_tests.MyTestCase.test_successful_login.executor": "Run",
+    "Python.controller.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "MNYTRKR-31-Code-Refactoring",
+    "git-widget-placeholder": "MNYTRKR-32-MoneyTracker-UserProfile-Get-User-Details",
     "last_opened_file_path": "D:/Code Repository/MoneyTracker/src/unittest"
   },
   "keyToStringList": {
@@ -87,7 +68,7 @@
       <recent name="D:\Code Repository\MoneyTracker\src\unittest\python" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for src.unittest.python.authentication_tests.MyTestCase.test_successful_login">
+  <component name="RunManager">
     <configuration name="Python tests for src.unittest.python.authentication_tests.MyTestCase.TestLoginFunction.test_successful_login" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="MoneyTracker" />
       <option name="ENV_FILES" value="" />
