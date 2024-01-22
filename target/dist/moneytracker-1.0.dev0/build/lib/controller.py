@@ -126,7 +126,7 @@ class controller():
             if menu == 1:
                 profile.userProfile.getProfile(conn=conn, cur=cur, userID=userID)
             elif menu == 2:
-                print("Update User Account")
+                profile.userProfile.updProfile(conn=conn, cur=cur, userID=userID)
             elif menu == 3:
                 print("Change Password")
             elif menu == 4:

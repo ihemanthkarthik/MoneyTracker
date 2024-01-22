@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb050256-1fcd-496f-befe-e52e5fac719e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/python/userprofile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/MoneyTracker.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/python/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/python/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/python/userprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/userprofile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +51,13 @@
     "Python tests.Python tests for src.unittest.python.authentication_tests.MyTestCase.test_successful_login.executor": "Run",
     "Python.controller.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.userprofile.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "MNYTRKR-32-MoneyTracker-UserProfile-Get-User-Details",
-    "last_opened_file_path": "D:/Code Repository/MoneyTracker/src/unittest"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "MNYTRKR-33-MoneyTracker-UserProfile-Update-User-Information",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Code Repository/MoneyTracker"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
