@@ -1,0 +1,8 @@
+__init__.py
+setup.py
+MoneyTracker.egg-info/PKG-INFO
+MoneyTracker.egg-info/SOURCES.txt
+MoneyTracker.egg-info/dependency_links.txt
+MoneyTracker.egg-info/namespace_packages.txt
+MoneyTracker.egg-info/top_level.txt
+MoneyTracker.egg-info/zip-safe

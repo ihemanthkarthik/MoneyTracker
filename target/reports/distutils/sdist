@@ -1,0 +1,34 @@
+WARNING: '.' not a valid package name; please use only .-separated package names in setup.py
+running clean
+'build\lib' does not exist -- can't clean it
+'build\bdist.win-amd64' does not exist -- can't clean it
+'build\scripts-3.11' does not exist -- can't clean it
+running sdist
+running egg_info
+creating MoneyTracker.egg-info
+writing MoneyTracker.egg-info\PKG-INFO
+writing dependency_links to MoneyTracker.egg-info\dependency_links.txt
+writing namespace_packages to MoneyTracker.egg-info\namespace_packages.txt
+writing top-level names to MoneyTracker.egg-info\top_level.txt
+writing manifest file 'MoneyTracker.egg-info\SOURCES.txt'
+reading manifest file 'MoneyTracker.egg-info\SOURCES.txt'
+writing manifest file 'MoneyTracker.egg-info\SOURCES.txt'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+running check
+creating MoneyTracker-1.0.dev0
+creating MoneyTracker-1.0.dev0\MoneyTracker.egg-info
+copying files to MoneyTracker-1.0.dev0...
+copying __init__.py -> MoneyTracker-1.0.dev0
+copying setup.py -> MoneyTracker-1.0.dev0
+copying MoneyTracker.egg-info\PKG-INFO -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
+copying MoneyTracker.egg-info\SOURCES.txt -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
+copying MoneyTracker.egg-info\dependency_links.txt -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
+copying MoneyTracker.egg-info\namespace_packages.txt -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
+copying MoneyTracker.egg-info\top_level.txt -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
+copying MoneyTracker.egg-info\zip-safe -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
+copying MoneyTracker.egg-info\SOURCES.txt -> MoneyTracker-1.0.dev0\MoneyTracker.egg-info
+Writing MoneyTracker-1.0.dev0\setup.cfg
+creating dist
+Creating tar archive
+removing 'MoneyTracker-1.0.dev0' (and everything under it)
