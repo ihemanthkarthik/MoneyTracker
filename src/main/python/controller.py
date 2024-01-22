@@ -130,7 +130,7 @@ class controller():
             elif menu == 3:
                 print("Change Password")
             elif menu == 4:
-                print("Delete User Account")
+                profile.userProfile.delAccount(conn=conn, cur=cur, userID=userID)
             elif menu == 5:
                 print("Upgrade to Premium Account")
             elif menu == 6:
@@ -144,3 +144,4 @@ class controller():
 
         except Exception as e:
             print(f"\nError in User Profile Module: {e}\nPlease try again later.")
+
