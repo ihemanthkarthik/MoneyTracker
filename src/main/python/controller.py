@@ -1,5 +1,6 @@
 # Importing Libraries and Modules
 import authentication as auth
+import userprofile as profile
 
 class controller():
     def __init__(self) -> None:
@@ -76,7 +77,7 @@ class controller():
 
             # Function call based on the Module Selection
             if module == 1:  # User Profile Section
-                print("User Profile")
+                controller.usrProfileController(conn=conn, cur=cur, userID=userID)
             elif module == 2:  # Bank Integration Section
                 print("Bank Integrations")
             elif module == 3:  # Expense Category Management Section
@@ -96,3 +97,50 @@ class controller():
 
         except Exception as e:
             print(f"\nError in Application: {e}\nPlease try again later.")
+
+    def usrProfileController(conn, cur, userID):
+        try:
+            # User Profile Module Selection
+            print(
+                "\nUser Profile:"
+                "\n1. Get User Account Details"
+                "\n2. Update User Account Details"
+                "\n3. Change Password"
+                "\n4. Delete User Account Details"
+                "\n5. Upgrade to Premium Account"
+                "\n6. Log Out"
+                "\n7. Back to Module Selection"
+            )
+
+            # Menu Selection Check based on the above message
+            while True:
+                menu = int(input("\nChoose an option (1-7): "))
+
+                if menu in range(1, 8):
+                    break
+                else:
+                    print("Invalid choice. Please enter a number between 1 to 7.")
+                    continue
+
+            # Function call based on the Menu Selection
+            if menu == 1:
+                profile.userProfile.getProfile(conn=conn, cur=cur, userID=userID)
+            elif menu == 2:
+                print("Update User Account")
+            elif menu == 3:
+                print("Change Password")
+            elif menu == 4:
+                print("Delete User Account")
+            elif menu == 5:
+                print("Upgrade to Premium Account")
+            elif menu == 6:
+                print("You are successfully logged out!")
+                controller.authentication(conn=conn, cur=cur)
+            elif menu == 7:
+                controller.application(conn=conn, cur=cur, userID=userID)
+                return
+
+            controller.usrProfileController(conn=conn, cur=cur, userID=userID)
+
+        except Exception as e:
+            print(f"\nError in User Profile Module: {e}\nPlease try again later.")
