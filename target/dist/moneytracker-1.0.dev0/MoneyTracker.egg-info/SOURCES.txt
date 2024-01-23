@@ -1,5 +1,6 @@
 __init__.py
 authentication.py
+bankintegrations.py
 connection.py
 controller.py
 logger.py

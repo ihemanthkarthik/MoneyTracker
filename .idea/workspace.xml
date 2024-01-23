@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb050256-1fcd-496f-befe-e52e5fac719e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/python/bankintegrations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/python/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/python/userprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/userprofile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MNYTRKR-36-MoneyTracker-UserProfile-Upgrade-User-Account",
+    "git-widget-placeholder": "MNYTRKR-38-MoneyTracker-Bank-Integrations-Get-Bank-Account-Details",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Code Repository/MoneyTracker"
   },

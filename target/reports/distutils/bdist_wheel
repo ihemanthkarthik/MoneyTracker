@@ -9,6 +9,7 @@ running build_py
 creating build
 creating build\lib
 copying authentication.py -> build\lib
+copying bankintegrations.py -> build\lib
 copying connection.py -> build\lib
 copying controller.py -> build\lib
 copying logger.py -> build\lib
@@ -35,6 +36,7 @@ running install_lib
 creating build\bdist.win-amd64
 creating build\bdist.win-amd64\wheel
 copying build\lib\authentication.py -> build\bdist.win-amd64\wheel\.
+copying build\lib\bankintegrations.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\connection.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\controller.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\logger.py -> build\bdist.win-amd64\wheel\.
@@ -56,6 +58,7 @@ creating build\bdist.win-amd64\wheel\MoneyTracker-1.0.dev0.dist-info\WHEEL
 creating 'dist\MoneyTracker-1.0.dev0-py3-none-any.whl' and adding 'build\bdist.win-amd64\wheel' to it
 adding '__init__.py'
 adding 'authentication.py'
+adding 'bankintegrations.py'
 adding 'connection.py'
 adding 'controller.py'
 adding 'logger.py'
