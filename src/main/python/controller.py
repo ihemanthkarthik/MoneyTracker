@@ -177,11 +177,11 @@ class Controller:
             if menu == 1:
                 bank.BankIntegration.getBankAccount(cur=cur, userID=userID)
             elif menu == 2:
-                bank.BankIntegration.addBankAccount(conn=conn,cur=cur,userID=userID)
+                bank.BankIntegration.addBankAccount(conn=conn, cur=cur, userID=userID)
             elif menu == 3:
-                bank.BankIntegration.updBankAccount(conn=conn,cur=cur,userID=userID)
+                bank.BankIntegration.updBankAccount(conn=conn, cur=cur, userID=userID)
             elif menu == 4:
-                bank.BankIntegration.delBankAccount(conn=conn,cur=cur,userID=userID)
+                bank.BankIntegration.delBankAccount(conn=conn, cur=cur, userID=userID)
             elif menu == 5:
                 Controller.application(conn=conn, cur=cur, userID=userID)
                 return
@@ -191,6 +191,7 @@ class Controller:
         except Exception as e:
             print(f"\nError in Bank Integrations Module: {e}\nPlease try again later.")
 
+    @staticmethod
     def expenseCategoryAction(conn, cur, userID):
         try:
             # Expense Categories Module Selection
@@ -214,9 +215,9 @@ class Controller:
                     continue
 
             if menu == 1:
-                expcat.ExpenseCategories.getExpenseCategories(conn=conn, cur=cur, userID=userID)
+                expcat.ExpenseCategories.getExpenseCategories(cur=cur, userID=userID)
             elif menu == 2:
-                expcat.ExpenseCategories.getExpCatID(conn=conn, cur=cur, userID=userID)
+                expcat.ExpenseCategories.addExpenseCategory(conn=conn, cur=cur, userID=userID)
             elif menu == 3:
                 print("Update Expense Category")
             elif menu == 4:
