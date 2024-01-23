@@ -1,6 +1,7 @@
 # Importing Libraries and Modules
 import authentication as auth
 import userprofile as profile
+import bankintegrations as bank
 
 class controller():
     def __init__(self) -> None:
@@ -79,7 +80,7 @@ class controller():
             if module == 1:  # User Profile Section
                 controller.usrProfileController(conn=conn, cur=cur, userID=userID)
             elif module == 2:  # Bank Integration Section
-                print("Bank Integrations")
+                controller.bankIntegrationAction(conn=conn, cur=cur, userID=userID)
             elif module == 3:  # Expense Category Management Section
                 print("Expense Category Management")
             elif module == 4:  # Income Tracking Section
@@ -144,4 +145,44 @@ class controller():
 
         except Exception as e:
             print(f"\nError in User Profile Module: {e}\nPlease try again later.")
+
+    def bankIntegrationAction(conn, cur, userID):
+        try:
+            # Bank Integrations Module Selection
+            print(
+                "\nBank Integrations:"
+                "\n1. Get Bank Account Details"
+                "\n2. Add Bank Account"
+                "\n3. Update Bank Account Details"
+                "\n4. Delete Bank Account"
+                "\n5. Back to Module Selection"
+            )
+
+            # Menu Selection Check based on the above message
+            while True:
+                menu = int(input("\nChoose an option (1-5): "))
+
+                if menu in range(1, 6):
+                    break
+                else:
+                    print("Invalid choice. Please enter a number between 1 to 5.")
+                    continue
+
+            # Function call based on the Menu Selection
+            if menu == 1:
+                bank.bankIntegration.getBankAccount(conn=conn, cur=cur, userID=userID)
+            elif menu == 2:
+                print("Add Bank Account")
+            elif menu == 3:
+                print("Update Bank Account Details")
+            elif menu == 4:
+                print("Delete Bank Account")
+            elif menu == 5:
+                print("Back to Module Selection")
+                return
+
+            controller.bankIntegrationAction(conn=conn, cur=cur, userID=userID)
+
+        except Exception as e:
+            print(f"\nError in Bank Integrations Module: {e}\nPlease try again later.")
 
