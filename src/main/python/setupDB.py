@@ -25,7 +25,8 @@ def setup(conn, cur):
         cur.execute(
             "CREATE TABLE IF NOT EXISTS Statement "
             "(TransID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, UserID INTEGER, BankID INTEGER, Amount Float, "
-            "PaymentType VARCHAR(2), ExpCatID INTEGER, Payee VARCHAR(50), Description VARCHAR(100), TransactionDate Datetime)"
+            "PaymentType VARCHAR(2), ExpCatID INTEGER, Payee VARCHAR(50), Description VARCHAR(100), TransactionDate "
+            "Datetime)"
         )
 
         # Creating Expense Categories Table for Maintaining Generic and Personalized Expense Categories of the User
@@ -36,7 +37,7 @@ def setup(conn, cur):
 
         # Creating Log Table for Maintaining Logs of the Activity for Error Handling
         cur.execute(
-            "CREATE TABLE IF NOT EXISTS Logs (UserID INTEGER, TransID INTEGER, LogDescription VARCHAR(200), LogDateTime "
+            "CREATE TABLE IF NOT EXISTS Logs (UserID INTEGER, TransID INTEGER, LogDescription VARCHAR(200), LogDateTime"
             "DateTime)"
         )
 

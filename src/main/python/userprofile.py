@@ -1,11 +1,13 @@
 # Importing Libraries and Modules
 import pyodbc as dbe
-import logger as log
+import src.main.python.logger as log
 
-class userProfile:
+
+class UserProfile:
 
     # View User Profile
-    def getProfile(conn, cur, userID):
+    @staticmethod
+    def getProfile(cur, userID):
         try:
             cur.execute("SELECT Name, Gender, DOB, Email, UserName, PremiumUser from Users WHERE UserID = ?", (userID,))
 
@@ -24,6 +26,8 @@ class userProfile:
             print(e)
 
         # Updating User Profile
+
+    @staticmethod
     def updProfile(conn, cur, userID):
         try:
             # Fetching User info for the UserID in the database
@@ -76,7 +80,7 @@ class userProfile:
                 # Check if the user was updated
                 if cur.rowcount > 0:
                     # Log the update
-                    log.logger.insertlog(conn=conn, cur=cur, userID=userID, transID=0,
+                    log.Logger.insertlog(cur=cur, userID=userID, transID=0,
                                          message="User Profile updated "
                                                  "successfully")
                     conn.commit()
@@ -91,13 +95,14 @@ class userProfile:
             print(e)
 
     # Delete Account
+    @staticmethod
     def delAccount(conn, cur, userID):
         try:
             while True:
 
                 confirm = \
-                input("WARNING: This will delete your account permanently. Would you like to proceed (Y/N)?")[
-                    0].upper()
+                    input("WARNING: This will delete your account permanently. Would you like to proceed (Y/N)?")[
+                        0].upper()
 
                 if confirm[0] == "Y" or confirm[0] == "N":
                     break
@@ -114,13 +119,13 @@ class userProfile:
                     cur.execute("DELETE FROM BankDetails WHERE UserID = ?", (userID,))
                     cur.execute("DELETE FROM Statement WHERE UserID = ?", (userID,))
                     cur.execute("DELETE FROM ExpenseCategories WHERE UserID = ?", (userID,))
-                    log.logger.insertlog(conn=conn, cur=cur, userID=userID, transID=0,
+                    log.Logger.insertlog(cur=cur, userID=userID, transID=0,
                                          message="User Account deleted successfully")
                     conn.commit()
                     print("Your profile has been deleted successfully!")
                     exit()
                 else:
-                    raise dbe.OperationalError("User Profle Deletion Failed")
+                    raise dbe.OperationalError("User Profile Deletion Failed")
             else:
                 print("Action Cancelled!")
 
@@ -128,6 +133,7 @@ class userProfile:
             print(e)
 
     # Change Password
+    @staticmethod
     def updPassword(conn, cur, userID):
         try:
             while True:
@@ -135,7 +141,7 @@ class userProfile:
                 if len(password) >= 8:
                     break
                 else:
-                    print("Password should be atleast 8 characters long.")
+                    print("Password should be at least 8 characters long.")
                     continue
 
             cur.execute("UPDATE Users SET Password = ? WHERE UserID = ?", (password, userID,))
@@ -143,7 +149,7 @@ class userProfile:
             pwd_upd = cur.rowcount
 
             if pwd_upd > 0:
-                log.logger.insertlog(conn=conn, cur=cur, userID=userID, transID=0,
+                log.Logger.insertlog(cur=cur, userID=userID, transID=0,
                                      message="User password updated successfully")
                 conn.commit()
                 print("Your password has been updated successfully!")
@@ -154,6 +160,7 @@ class userProfile:
             print(e)
 
     # Upgrade Account
+    @staticmethod
     def upgradeAccount(conn, cur, userID):
         try:
             # Get the license key to Upgrade to Premium Account
@@ -164,7 +171,7 @@ class userProfile:
                 upgrade = cur.rowcount
 
                 if upgrade > 0:
-                    log.logger.insertlog(conn=conn, cur=cur, userID=userID, transID=0,
+                    log.Logger.insertlog(cur=cur, userID=userID, transID=0,
                                          message="User upgraded to premium user!")
                     conn.commit()
                     print("Congratulations! You now have been upgraded to premium user!")

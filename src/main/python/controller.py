@@ -1,14 +1,15 @@
 # Importing Libraries and Modules
-import authentication as auth
-import userprofile as profile
-import bankintegrations as bank
+import src.main.python.authentication as auth
+import src.main.python.userprofile as profile
+import src.main.python.bankintegrations as bank
 
-class controller():
+class Controller:
     def __init__(self) -> None:
         self.userID = 0
         pass
 
     # Application Entry Controller Function for Authentication
+    @staticmethod
     def authentication(conn, cur):
         try:
             # Initializing userID
@@ -34,25 +35,26 @@ class controller():
 
             # Function call based on the Input
             if option == 1:  # Logging In
-                userID = auth.authorization.login(conn=conn, cur=cur)
+                userID = auth.Authorization.login(conn=conn, cur=cur)
             elif option == 2:  # New User Registration
-                userID = auth.authorization.register(conn=conn, cur=cur)
+                userID = auth.Authorization.register(conn=conn, cur=cur)
             elif option == 3:  # Forgot Password
-                userID = auth.authorization.frgtPwd(conn=conn, cur=cur)
+                userID = auth.Authorization.frgtPwd(conn=conn, cur=cur)
             elif option == 4:  # Forgot Username
-                userID = auth.authorization.frgtUsn(conn=conn, cur=cur)
+                userID = auth.Authorization.frgtUsn(cur=cur)
             elif option == 5:  # Exit the application
                 exit()
 
             # Check for userID and if not logged in redirects back to authentication page
             if userID <= 0:
-                controller.authentication(conn=conn, cur=cur)
+                Controller.authentication(conn=conn, cur=cur)
             else:
-                controller.application(conn=conn, cur=cur, userID=userID)
+                Controller.application(conn=conn, cur=cur, userID=userID)
 
         except Exception as e:
             print(f"\n{e}\nPlease try again later.")
 
+    @staticmethod
     def application(conn, cur, userID):
         try:
             # Module Selection
@@ -78,9 +80,9 @@ class controller():
 
             # Function call based on the Module Selection
             if module == 1:  # User Profile Section
-                controller.usrProfileController(conn=conn, cur=cur, userID=userID)
+                Controller.usrProfileController(conn=conn, cur=cur, userID=userID)
             elif module == 2:  # Bank Integration Section
-                controller.bankIntegrationAction(conn=conn, cur=cur, userID=userID)
+                Controller.bankIntegrationAction(conn=conn, cur=cur, userID=userID)
             elif module == 3:  # Expense Category Management Section
                 print("Expense Category Management")
             elif module == 4:  # Income Tracking Section
@@ -99,6 +101,7 @@ class controller():
         except Exception as e:
             print(f"\nError in Application: {e}\nPlease try again later.")
 
+    @staticmethod
     def usrProfileController(conn, cur, userID):
         try:
             # User Profile Module Selection
@@ -125,27 +128,28 @@ class controller():
 
             # Function call based on the Menu Selection
             if menu == 1:
-                profile.userProfile.getProfile(conn=conn, cur=cur, userID=userID)
+                profile.UserProfile.getProfile(cur=cur, userID=userID)
             elif menu == 2:
-                profile.userProfile.updProfile(conn=conn, cur=cur, userID=userID)
+                profile.UserProfile.updProfile(conn=conn, cur=cur, userID=userID)
             elif menu == 3:
-                profile.userProfile.updPassword(conn=conn, cur=cur, userID=userID)
+                profile.UserProfile.updPassword(conn=conn, cur=cur, userID=userID)
             elif menu == 4:
-                profile.userProfile.delAccount(conn=conn, cur=cur, userID=userID)
+                profile.UserProfile.delAccount(conn=conn, cur=cur, userID=userID)
             elif menu == 5:
-                profile.userProfile.upgradeAccount(conn=conn, cur=cur, userID=userID)
+                profile.UserProfile.upgradeAccount(conn=conn, cur=cur, userID=userID)
             elif menu == 6:
                 print("You are successfully logged out!")
-                controller.authentication(conn=conn, cur=cur)
+                Controller.authentication(conn=conn, cur=cur)
             elif menu == 7:
-                controller.application(conn=conn, cur=cur, userID=userID)
+                Controller.application(conn=conn, cur=cur, userID=userID)
                 return
 
-            controller.usrProfileController(conn=conn, cur=cur, userID=userID)
+            Controller.usrProfileController(conn=conn, cur=cur, userID=userID)
 
         except Exception as e:
             print(f"\nError in User Profile Module: {e}\nPlease try again later.")
 
+    @staticmethod
     def bankIntegrationAction(conn, cur, userID):
         try:
             # Bank Integrations Module Selection
@@ -170,7 +174,7 @@ class controller():
 
             # Function call based on the Menu Selection
             if menu == 1:
-                bank.bankIntegration.getBankAccount(conn=conn, cur=cur, userID=userID)
+                bank.BankIntegration.getBankAccount(cur=cur, userID=userID)
             elif menu == 2:
                 print("Add Bank Account")
             elif menu == 3:
@@ -181,8 +185,7 @@ class controller():
                 print("Back to Module Selection")
                 return
 
-            controller.bankIntegrationAction(conn=conn, cur=cur, userID=userID)
+            Controller.bankIntegrationAction(conn=conn, cur=cur, userID=userID)
 
         except Exception as e:
             print(f"\nError in Bank Integrations Module: {e}\nPlease try again later.")
-
