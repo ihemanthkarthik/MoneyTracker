@@ -3,6 +3,7 @@ import src.main.python.authentication as auth
 import src.main.python.userprofile as profile
 import src.main.python.bankintegrations as bank
 import src.main.python.expensecategories as expcat
+import src.main.python.incometracking as income
 
 class Controller:
     def __init__(self) -> None:
@@ -87,7 +88,7 @@ class Controller:
             elif module == 3:  # Expense Category Management Section
                 Controller.expenseCategoryAction(conn=conn, cur=cur, userID=userID)
             elif module == 4:  # Income Tracking Section
-                print("Income Tracking")
+                Controller.incomeTrackingAction(conn=conn, cur=cur, userID=userID)
             elif module == 5:  # Expense Logging Section
                 print("Expense Logging")
             elif module == 6:  # Transaction History Section
@@ -230,3 +231,43 @@ class Controller:
 
         except Exception as e:
             print(f"\nError in Expense Categories Module: {e}\nPlease try again later.")
+
+    @staticmethod
+    def incomeTrackingAction(conn, cur, userID):
+        try:
+            # Income Tracking Module Selection
+            print(
+                "\nIncome Tracking:"
+                "\n1. Get All Income Transactions"
+                "\n2. Add an Income Transaction"
+                "\n3. Update an Income Transaction"
+                "\n4. Delete an Income Transaction"
+                "\n5. Back to Module Selection"
+            )
+
+            # Menu Selection Check based on the above message
+            while True:
+                menu = int(input("\nChoose an option (1-5): "))
+
+                if menu in range(1, 6):
+                    break
+                else:
+                    print("Invalid choice. Please enter a number between 1 to 5.")
+                    continue
+
+            if menu == 1:
+                income.IncomeTracking.getIncomeTransactions(cur=cur, userID=userID)
+            elif menu == 2:
+                print("Add an Income Transaction")
+            elif menu == 3:
+                print("Update an Income Transaction")
+            elif menu == 4:
+                print("Delete an Income Transaction")
+            elif menu == 5:
+                Controller.application(conn=conn, cur=cur, userID=userID)
+                return
+
+            Controller.incomeTrackingAction(conn=conn, cur=cur, userID=userID)
+
+        except Exception as e:
+            print(f"\nError in Income Tracking Module: {e}\nPlease try again later.")
