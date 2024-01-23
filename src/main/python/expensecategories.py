@@ -3,11 +3,12 @@ import pyodbc as dbe
 from tabulate import tabulate as table
 import src.main.python.logger as log
 
+
 class ExpenseCategories:
 
     # View All Expense Categories
     @staticmethod
-    def getExpenseCategories(conn, cur, userID):
+    def getExpenseCategories(cur, userID):
         try:
             # Fetching number of expense categories associated with the user account
             cur.execute("WITH W AS (SELECT ROW_NUMBER() OVER (ORDER BY ExpCatID, Name) AS RowNum, Name, (CASE WHEN "
@@ -22,10 +23,10 @@ class ExpenseCategories:
 
     # Get ExpCatID from for the Selected Expense Category
     @staticmethod
-    def getExpCatID(conn, cur, userID):
+    def getExpCatID(cur, userID):
         try:
             # Printing all expense categories for the user to select an expense category
-            ExpenseCategories.getExpenseCategories(conn=conn, cur=cur, userID=userID)
+            ExpenseCategories.getExpenseCategories(cur=cur, userID=userID)
 
             # Fetching number of expense categories associated with the user account
             cur.execute("SELECT COUNT(*) from ExpenseCategories WHERE UserID = 0 OR UserID = ?", (userID,))
@@ -46,6 +47,33 @@ class ExpenseCategories:
             expCatID = cur.fetchone()
 
             return expCatID[0]
+
+        except Exception as e:
+            print(e)
+
+    # Adding New Expense Category
+    @staticmethod
+    def addExpenseCategory(conn, cur, userID):
+        try:
+
+            name = input("Expense Category Name: ")
+
+            cur.execute("SELECT COUNT(1) FROM ExpenseCategories WHERE UserID = ? AND Name = ?", (userID, name))
+            expExists = cur.fetchone()
+
+            if expExists[0] > 0:
+                raise Exception("The mentioned Expense Category already exists!")
+            else:
+                cur.execute("INSERT INTO ExpenseCategories (Name, UserID) VALUES (?, ?)", (name, userID))
+                expAdded = cur.rowcount
+
+                if expAdded > 0:
+                    log.Logger.insertlog(cur=cur, userID=userID, transID=0, message="Expense Category Added "
+                                                                                    "successfully")
+                    conn.commit()
+                    print("The Mentioned Expense Category added successfully!")
+                else:
+                    raise dbe.OperationalError("Expense Category Addition Failed!")
 
         except Exception as e:
             print(e)
