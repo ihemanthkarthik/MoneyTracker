@@ -3,6 +3,7 @@ authentication.py
 bankintegrations.py
 connection.py
 controller.py
+expensecategories.py
 logger.py
 main.py
 setup.py

@@ -24,6 +24,7 @@ copying authentication.py -> MoneyTracker-1.0.dev0
 copying bankintegrations.py -> MoneyTracker-1.0.dev0
 copying connection.py -> MoneyTracker-1.0.dev0
 copying controller.py -> MoneyTracker-1.0.dev0
+copying expensecategories.py -> MoneyTracker-1.0.dev0
 copying logger.py -> MoneyTracker-1.0.dev0
 copying main.py -> MoneyTracker-1.0.dev0
 copying setup.py -> MoneyTracker-1.0.dev0

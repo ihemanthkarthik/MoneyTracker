@@ -2,6 +2,7 @@
 import src.main.python.authentication as auth
 import src.main.python.userprofile as profile
 import src.main.python.bankintegrations as bank
+import src.main.python.expensecategories as expcat
 
 class Controller:
     def __init__(self) -> None:
@@ -84,7 +85,7 @@ class Controller:
             elif module == 2:  # Bank Integration Section
                 Controller.bankIntegrationAction(conn=conn, cur=cur, userID=userID)
             elif module == 3:  # Expense Category Management Section
-                print("Expense Category Management")
+                Controller.expenseCategoryAction(conn=conn, cur=cur, userID=userID)
             elif module == 4:  # Income Tracking Section
                 print("Income Tracking")
             elif module == 5:  # Expense Logging Section
@@ -182,7 +183,7 @@ class Controller:
             elif menu == 4:
                 bank.BankIntegration.delBankAccount(conn=conn,cur=cur,userID=userID)
             elif menu == 5:
-                print("Back to Module Selection")
+                Controller.application(conn=conn, cur=cur, userID=userID)
                 return
 
             Controller.bankIntegrationAction(conn=conn, cur=cur, userID=userID)
@@ -190,3 +191,41 @@ class Controller:
         except Exception as e:
             print(f"\nError in Bank Integrations Module: {e}\nPlease try again later.")
 
+    def expenseCategoryAction(conn, cur, userID):
+        try:
+            # Expense Categories Module Selection
+            print(
+                "\nExpense Categories:"
+                "\n1. Get Expense Categories"
+                "\n2. Add Expense Category"
+                "\n3. Update Expense Category"
+                "\n4. Delete Expense Category"
+                "\n5. Back to Module Selection"
+            )
+
+            # Menu Selection Check based on the above message
+            while True:
+                menu = int(input("\nChoose an option (1-5): "))
+
+                if menu in range(1, 6):
+                    break
+                else:
+                    print("Invalid choice. Please enter a number between 1 to 5.")
+                    continue
+
+            if menu == 1:
+                expcat.ExpenseCategories.getExpenseCategories(conn=conn, cur=cur, userID=userID)
+            elif menu == 2:
+                print("Add Expense Category")
+            elif menu == 3:
+                print("Update Expense Category")
+            elif menu == 4:
+                print("Delete Expense Category")
+            elif menu == 5:
+                Controller.application(conn=conn, cur=cur, userID=userID)
+                return
+
+            Controller.expenseCategoryAction(conn=conn, cur=cur, userID=userID)
+
+        except Exception as e:
+            print(f"\nError in Expense Categories Module: {e}\nPlease try again later.")

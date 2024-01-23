@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb050256-1fcd-496f-befe-e52e5fac719e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/python/expensecategories.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/python/bankintegrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/bankintegrations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/python/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/controller.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MNYTRKR-41-MoneyTracker-Bank-Integrations-Delete-Bank-Account-Details",
+    "git-widget-placeholder": "MNYTRKR-42-MoneyTracker-Expense-Category-Management-Get-Expense-Categories",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Code Repository/MoneyTracker"
   },
@@ -76,7 +76,7 @@
       <recent name="D:\Code Repository\MoneyTracker\src\unittest\python" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for src.unittest.python.authentication_tests.MyTestCase.test_successful_login">
     <configuration name="Python tests for src.unittest.python.authentication_tests.MyTestCase.TestLoginFunction.test_successful_login" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="MoneyTracker" />
       <option name="ENV_FILES" value="" />
