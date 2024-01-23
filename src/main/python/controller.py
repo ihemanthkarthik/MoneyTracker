@@ -216,7 +216,7 @@ class Controller:
             if menu == 1:
                 expcat.ExpenseCategories.getExpenseCategories(conn=conn, cur=cur, userID=userID)
             elif menu == 2:
-                print("Add Expense Category")
+                expcat.ExpenseCategories.getExpCatID(conn=conn, cur=cur, userID=userID)
             elif menu == 3:
                 print("Update Expense Category")
             elif menu == 4:

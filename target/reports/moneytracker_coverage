@@ -5,10 +5,10 @@ authentication.py        111    111     0%
 bankintegrations.py      129    129     0%
 connection.py             21     21     0%
 controller.py            139    139     0%
-expensecategories.py      13     13     0%
+expensecategories.py      30     30     0%
 logger.py                  9      9     0%
 main.py                   12     12     0%
 setupdb.py                19     19     0%
 userprofile.py           109    109     0%
 ------------------------------------------
-TOTAL                    562    562     0%
+TOTAL                    579    579     0%
