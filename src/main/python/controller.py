@@ -262,7 +262,7 @@ class Controller:
             elif menu == 3:
                 income.IncomeTracking.updIncomeTransaction(conn=conn, cur=cur, userID=userID)
             elif menu == 4:
-                print("Delete an Income Transaction")
+                income.IncomeTracking.delIncomeTransaction(conn=conn, cur=cur, userID=userID)
             elif menu == 5:
                 Controller.application(conn=conn, cur=cur, userID=userID)
                 return

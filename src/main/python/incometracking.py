@@ -238,3 +238,43 @@ class IncomeTracking:
 
         except Exception as e:
             print(e)
+
+    # Modifying Income Transaction
+    @staticmethod
+    def delIncomeTransaction(conn, cur, userID):
+        try:
+            # Fetching TransID based User Selection
+            transID = IncomeTracking.getTransID(cur=cur, userID=userID)
+
+            if transID <= 0:
+                print("\nNo transaction found!")
+            else:
+                while True:
+                    # Getting confirmation from the user for deleting the expense category
+                    confirm = \
+                        input(
+                            "\nWARNING: This will delete your transaction permanently. Would you like to proceed (Y/N)?"
+                            )[0].upper()
+
+                    if confirm[0] == "Y" or confirm[0] == "N":
+                        break
+                    else:
+                        print("\nInvalid choice! Please enter Y  or N ")
+                        continue
+
+                if confirm[0] == "Y":
+                    cur.execute("DELETE FROM Statement WHERE TransID = ?", (transID,))
+                    expCatDel = cur.rowcount
+
+                    if expCatDel > 0:
+                        log.Logger.insertlog(cur=cur, userID=userID, transID=transID,
+                                             message="Income Transaction Deleted Successfully")
+                        conn.commit()
+                        print("\nYour Transaction has been deleted successfully!")
+                    else:
+                        raise dbe.OperationalError("Income Transaction Deletion Failed")
+                else:
+                    print("\nAction Cancelled!")
+
+        except Exception as e:
+            print(e)
