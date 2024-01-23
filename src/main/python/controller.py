@@ -176,7 +176,7 @@ class Controller:
             if menu == 1:
                 bank.BankIntegration.getBankAccount(cur=cur, userID=userID)
             elif menu == 2:
-                print("Add Bank Account")
+                bank.BankIntegration.addBankAccount(conn=conn,cur=cur,userID=userID)
             elif menu == 3:
                 print("Update Bank Account Details")
             elif menu == 4:
