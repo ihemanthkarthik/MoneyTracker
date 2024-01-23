@@ -57,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MNYTRKR-57-MoneyTracker-Expense-Category-Management-Add-Expense-Categories",
+    "git-widget-placeholder": "MNYTRKR-44-MoneyTracker-Expense-Category-Management-Update-Expense-Categories",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Code Repository/MoneyTracker"
   },
@@ -77,7 +77,7 @@
       <recent name="D:\Code Repository\MoneyTracker\src\unittest\python" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for src.unittest.python.authentication_tests.MyTestCase.test_successful_login">
     <configuration name="Python tests for src.unittest.python.authentication_tests.MyTestCase.TestLoginFunction.test_successful_login" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="MoneyTracker" />
       <option name="ENV_FILES" value="" />

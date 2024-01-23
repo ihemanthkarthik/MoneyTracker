@@ -77,3 +77,61 @@ class ExpenseCategories:
 
         except Exception as e:
             print(e)
+
+    # Modifying Expense Category
+    @staticmethod
+    def updExpenseCategory(conn, cur, userID):
+        try:
+            # Note Message for the User
+            print("\n NOTE: You will be able to modify/delete only the expense categories you added!")
+            # Fetching ExpCatID based USer Selection
+            while True:
+                expCatID = ExpenseCategories.getExpCatID(cur=cur, userID=userID)
+
+                cur.execute("SELECT UserID FROM ExpenseCategories WHERE ExpCatID = ?", (expCatID,))
+                usrChk = cur.fetchone()
+
+                if usrChk[0] > 0:
+                    break
+                else:
+                    print("\nInvalid Choice! This is a system added Expense Category!\nYou will be able to "
+                          "modify/delete only the expense categories you added!")
+                    continue
+
+            # Print the update options
+            print(
+                "\n1. Name"
+                "\n2. Cancel Expense Category updation\n"
+            )
+
+            # Menu Selection Check based on the above message
+            while True:
+                menu = int(input("Please enter 1 to update (or) 2 to cancel: "))
+                if menu in range(1, 3):
+                    break
+                else:
+                    print("Invalid choice. Please enter 1 to update (or) 2 to cancel: ")
+                    continue
+
+            # Get the updated information
+            if menu == 1:
+
+                # Update the expense category
+                name = input("Enter the name you want to update: ")
+                cur.execute("UPDATE ExpenseCategories SET Name = ? WHERE ExpCatID = ?", (name, expCatID))
+
+                # Check if the expense category was updated
+                if cur.rowcount > 0:
+                    # Log the update
+                    log.Logger.insertlog(cur=cur, userID=userID, transID=0, message="Expense Category updated "
+                                                                                    "successfully")
+                    conn.commit()
+                    print("Your Expense Category has been updated successfully!")
+                else:
+                    raise dbe.OperationalError("Unexpected Error Encountered! Sorry for the inconvenience")
+            # Cancel the update
+            elif menu == 2:
+                return
+
+        except Exception as e:
+            print(e)
