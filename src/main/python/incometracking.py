@@ -1,9 +1,9 @@
+# Importing Libraries and Modules
 import pyodbc as dbe
 from tabulate import tabulate as table
 import src.main.python.logger as log
 import src.main.python.bankintegrations as bank
 import src.main.python.expensecategories as expense
-
 
 class IncomeTracking:
 
