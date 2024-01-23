@@ -185,3 +185,43 @@ class BankIntegration:
 
         except Exception as e:
             print(e)
+
+    # Delete Bank Details
+    @staticmethod
+    def delBankAccount(conn, cur, userID):
+        try:
+            bankID = BankIntegration.getBankID(cur=cur, userID=userID)
+
+            if bankID > 0:
+                # User Input Validation Check
+                while True:
+                    # Getting confirmation from the user for deleting the bank account
+                    confirm = input("WARNING: This will delete your bank account and all its transactions permanently. "
+                                    "Would you like to proceed (Y/N)?")[0].upper()
+
+                    if confirm[0] == "Y" or confirm[0] == "N":
+                        break
+                    else:
+                        print("Invalid choice! Please enter Y  or N ")
+                        continue
+
+                if confirm[0] == "Y":
+                    cur.execute("DELETE FROM BankDetails WHERE UserID = ? AND BankID = ?", (userID, bankID))
+                    bankDel = cur.rowcount
+
+                    if bankDel > 0:
+                        cur.execute("DELETE FROM Statement WHERE BankID = ?", (bankID,))
+                        log.Logger.insertlog(cur=cur, userID=userID, transID=0,
+                                             message="Bank Account deleted "
+                                                     "successfully")
+                        conn.commit()
+                        print("Your Bank Account has been deleted successfully!")
+                    else:
+                        raise dbe.OperationalError("Bank Account Deletion Failed")
+                else:
+                    print("Action Cancelled!")
+            else:
+                print("No Bank Account Found to delete.")
+
+        except Exception as e:
+            print(e)
