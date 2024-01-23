@@ -258,7 +258,7 @@ class Controller:
             if menu == 1:
                 income.IncomeTracking.getIncomeTransactions(cur=cur, userID=userID)
             elif menu == 2:
-                print("Add an Income Transaction")
+                income.IncomeTracking.addIncomeTransaction(conn=conn, cur=cur, userID=userID)
             elif menu == 3:
                 print("Update an Income Transaction")
             elif menu == 4:
