@@ -298,7 +298,7 @@ class Controller:
             if menu == 1:
                 expense.ExpenseLogging.getExpenseTransactions(cur=cur, userID=userID)
             elif menu == 2:
-                print("Add an Expense Transaction")
+                expense.ExpenseLogging.addExpenseTransaction(conn=conn, cur=cur, userID=userID)
             elif menu == 3:
                 print("Update an Expense Transaction")
             elif menu == 4:
