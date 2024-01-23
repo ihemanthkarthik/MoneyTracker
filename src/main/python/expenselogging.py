@@ -140,3 +140,127 @@ class ExpenseLogging:
 
         except Exception as e:
             print(e)
+
+    # Modifying Expense Transaction
+    @staticmethod
+    def updExpenseTransaction(conn, cur, userID):
+        try:
+            # Fetching TransID based User Selection
+            transID = ExpenseLogging.getTransID(cur=cur, userID=userID)
+
+            if transID <= 0:
+                print("\nNo transaction found!")
+            else:
+                cur.execute("SELECT s.BankID AS BankID, "
+                            "s.Amount as Amount, "
+                            "s.PaymentType as PaymentType, "
+                            "s.Payee as Payee, "
+                            "s.ExpCatID as ExpCatID, "
+                            "s.Description as Description, "
+                            "s.TransactionDate as DateTime "
+                            "FROM Statement s "
+                            "WHERE TransID = ?", (transID,))
+
+                values = cur.fetchone()
+
+                values = [values[0], values[1], values[2], values[3], values[4], values[5], values[6]]
+
+                # Print the update options
+                print(
+                    "\n1. Update Bank Account"
+                    "\n2. Update Amount"
+                    "\n3. Update Payment Type"
+                    "\n4. Update Payee"
+                    "\n5. Update Expense Category"
+                    "\n6. Update Description"
+                    "\n7. Update Transaction Date"
+                    "\n8. Confirm Changes"
+                    "\n9. Cancel Expense Category updation\n"
+                )
+
+                # Menu Selection Check based on the above message
+                while True:
+                    menu = int(
+                        input("Please enter (1-7) to Modify and 8 to confirm the changes (or) 9 to cancel: "))
+                    if menu in range(8, 10):
+                        break
+                    elif menu in range(1, 8):
+                        # Get the updated information
+                        if menu == 1:
+                            bankID = bank.BankIntegration.getBankID(cur=cur, userID=userID)
+                            values = (bankID,) + values[1:]  # Update BankID
+                        elif menu == 2:
+                            amount = float(input("Enter the amount you want to update: "))
+                            values = (values[0], values[1], amount) + values[3:]  # Update Amount
+                        elif menu == 3:
+                            while True:
+                                print(
+                                    "Note: Changing an expense to credit will automatically change the Expense "
+                                    "Category to Income. \nThis will not be changeable until the transaction is "
+                                    "changed to expense(DB)")
+                                pmtType = input(
+                                    "Enter the type of Transaction: CR -> Credit or DB -> Debit: ").upper()
+                                if pmtType[:2] == "CR":
+                                    cur.execute("SELECT ExpCatID FROM ExpenseCategories WHERE Name = 'Income'")
+                                    expID = cur.fetchone()
+                                    expCatID = expID[0]
+                                    values = (values[0], values[1], pmtType[:2], values[3], expCatID) + values[5:]
+                                    # Update Payment Type
+                                    break
+                                elif pmtType[:2] == "DB":
+                                    values = (values[0], values[1], pmtType[:2]) + values[3:]  # Update Payment Type
+                                    break
+                                else:
+                                    print("Invalid Input. Please input CR for Credit or DB for Debit")
+                                    continue
+                        elif menu == 4:
+                            payee = input("Enter the payee you want to update: ")
+                            values = (values[0], values[1], values[2], payee) + values[4:]
+                        elif menu == 5:
+                            if values[2] == "CR":
+                                print(
+                                    "The transaction is changed as Credit(CR). You will not be able to select an "
+                                    "expense category")
+                            else:
+                                expCatID = expense.ExpenseCategories.getExpCatID(cur=cur, userID=userID)
+
+                            values = (values[0], values[1], values[2], values[3], expCatID) + values[5:]
+                        elif menu == 6:
+                            desc = input("Enter the description you want to update: ")
+                            values = (values[0], values[1], values[2], values[3], values[4], desc) + values[6:]
+                        elif menu == 7:
+                            date = input("Enter the transaction date you want to update: ")
+                            values = (values[0], values[1], values[2], values[3], values[4], values[5], date)
+                        continue
+                    else:
+                        print(
+                            "\nInvalid choice. Please enter (1-7) to Modify and 8 to confirm the changes (or) 9 to "
+                            "cancel")
+                        continue
+
+                # Get the updated information
+                if menu == 8:
+                    if values[3] == "CR":
+                        cur.execute("SELECT ExpCatID FROM ExpenseCategories WHERE Name = 'Income'")
+                        exp = cur.fetchone()
+                        values[5] = exp[0]
+
+                    # Update the bank account
+                    cur.execute(
+                        "UPDATE Statement SET BankID = ?, Amount = ?, PaymentType = ?, Payee = ?, ExpCatID = ?, "
+                        "Description = ?, TransactionDate = ? WHERE TransID = ?",
+                        (values[0], values[1], values[2], values[3], values[4], values[5], values[6], transID))
+                    # Check if the bank account was updated
+                    if cur.rowcount > 0:
+                        # Log the update
+                        log.Logger.insertlog(cur=cur, userID=userID, transID=transID,
+                                             message="Expense Transaction Updated Successfully")
+                        conn.commit()
+                        print("\nYour Transaction Details has been updated successfully!")
+                    else:
+                        raise dbe.OperationalError("Unexpected Error Encountered! Sorry for the inconvenience")
+                if menu == 9:
+                    return
+
+        except Exception as e:
+            print(e)

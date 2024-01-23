@@ -273,6 +273,7 @@ class Controller:
         except Exception as e:
             print(f"\nError in Income Tracking Module: {e}\nPlease try again later.")
 
+    @staticmethod
     def expenseLoggingAction(conn, cur, userID):
         try:
             # Expense Logging Module Selection
@@ -300,7 +301,7 @@ class Controller:
             elif menu == 2:
                 expense.ExpenseLogging.addExpenseTransaction(conn=conn, cur=cur, userID=userID)
             elif menu == 3:
-                print("Update an Expense Transaction")
+                expense.ExpenseLogging.updExpenseTransaction(conn=conn, cur=cur, userID=userID)
             elif menu == 4:
                 print("Delete an Expense Transaction")
             elif menu == 5:
