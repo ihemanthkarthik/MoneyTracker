@@ -1,6 +1,7 @@
 # Importing Libraries and Modules
-import connection
-import controller
+import src.main.python.connection as connection
+import src.main.python.controller as controller
+
 
 class MoneyTracker:
     def __init__(self):
@@ -10,10 +11,11 @@ class MoneyTracker:
             # Connecting to database
             conn, cur = connection.getConnection()
 
-            controller.controller.authentication(conn=conn, cur=cur)
+            controller.Controller.authentication(conn=conn, cur=cur)
 
         except Exception as e:
             print(f"An error occurred while initializing the application: {e}")
+
 
 if __name__ == "__main__":
     MoneyTracker()

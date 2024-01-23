@@ -1,6 +1,6 @@
 # Importing Libraries and Modules
 import sqlite3 as database
-import setupDB as dbSetup
+import src.main.python.setupDB as dbSetup
 
 # Creating function for DB Connection
 def getConnection():
