@@ -180,7 +180,7 @@ class Controller:
             elif menu == 3:
                 bank.BankIntegration.updBankAccount(conn=conn,cur=cur,userID=userID)
             elif menu == 4:
-                print("Delete Bank Account")
+                bank.BankIntegration.delBankAccount(conn=conn,cur=cur,userID=userID)
             elif menu == 5:
                 print("Back to Module Selection")
                 return
