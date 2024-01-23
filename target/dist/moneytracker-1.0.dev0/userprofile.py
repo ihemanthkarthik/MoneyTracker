@@ -126,3 +126,29 @@ class userProfile:
 
         except Exception as e:
             print(e)
+
+    # Change Password
+    def updPassword(conn, cur, userID):
+        try:
+            while True:
+                password = input("Please enter the new password: ")
+                if len(password) >= 8:
+                    break
+                else:
+                    print("Password should be atleast 8 characters long.")
+                    continue
+
+            cur.execute("UPDATE Users SET Password = ? WHERE UserID = ?", (password, userID,))
+
+            pwd_upd = cur.rowcount
+
+            if pwd_upd > 0:
+                log.logger.insertlog(conn=conn, cur=cur, userID=userID, transID=0,
+                                     message="User password updated successfully")
+                conn.commit()
+                print("Your password has been updated successfully!")
+            else:
+                raise dbe.OperationalError("User Password Updation Failed")
+
+        except Exception as e:
+            print(e)
