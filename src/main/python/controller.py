@@ -304,7 +304,7 @@ class Controller:
             elif menu == 3:
                 expense.ExpenseLogging.updExpenseTransaction(conn=conn, cur=cur, userID=userID)
             elif menu == 4:
-                print("Delete an Expense Transaction")
+                expense.ExpenseLogging.delExpenseTransaction(conn=conn, cur=cur, userID=userID)
             elif menu == 5:
                 Controller.application(conn=conn, cur=cur, userID=userID)
                 return

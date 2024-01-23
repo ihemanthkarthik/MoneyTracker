@@ -264,3 +264,42 @@ class ExpenseLogging:
 
         except Exception as e:
             print(e)
+
+    # Deleting Expense Transaction
+    @staticmethod
+    def delExpenseTransaction(conn, cur, userID):
+        try:
+            # Fetching TransID based User Selection
+            transID = ExpenseLogging.getTransID(cur=cur, userID=userID)
+
+            if transID <= 0:
+                print("\nNo transaction found!")
+            else:
+                while True:
+                    # Getting confirmation from the user for deleting the expense category
+                    confirm = input(
+                        "\nWARNING: This will delete your transaction permanently. Would you like to proceed (Y/N)?")[
+                        0].upper()
+
+                    if confirm[0] == "Y" or confirm[0] == "N":
+                        break
+                    else:
+                        print("\nInvalid choice! Please enter Y  or N ")
+                        continue
+
+                if confirm[0] == "Y":
+                    cur.execute("DELETE FROM Statement WHERE TransID = ?", (transID,))
+                    expCatDel = cur.rowcount
+
+                    if expCatDel > 0:
+                        log.Logger.insertlog(cur=cur, userID=userID, transID=transID,
+                                             message="Expense Transaction Deleted Successfully")
+                        conn.commit()
+                        print("\nYour Transaction has been deleted successfully!")
+                    else:
+                        raise dbe.OperationalError("Expense Transaction Deletion Failed")
+                else:
+                    print("\nAction Cancelled!")
+
+        except Exception as e:
+            print(e)
