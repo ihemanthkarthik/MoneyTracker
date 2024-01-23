@@ -6,6 +6,8 @@ import src.main.python.expensecategories as expcat
 import src.main.python.incometracking as income
 import src.main.python.expenselogging as expense
 import src.main.python.transactionhistory as transhist
+import src.main.python.expenseanalysis as analysis
+
 
 class Controller:
     def __init__(self) -> None:
@@ -96,7 +98,7 @@ class Controller:
             elif module == 6:  # Transaction History Section
                 Controller.transactionHistoryAction(conn=conn, cur=cur, userID=userID)
             elif module == 7:  # Expense Analysis Section
-                print("Expense Analysis")
+                Controller.expenseAnalysisAction(conn=conn, cur=cur, userID=userID)
             elif module == 8:  # Data Export Section
                 print("Data Export")
             elif module == 9:  # Exit Application
@@ -344,3 +346,34 @@ class Controller:
 
         except Exception as e:
             print(f"\nError in Transaction History Module: {e}\nPlease try again later.")
+
+    @staticmethod
+    def expenseAnalysisAction(conn, cur, userID):
+        try:
+            # Action Analysis Module Selection
+            print(
+                "\nExpense Analysis:"
+                "\n1. Get Expense Analysis"
+                "\n2. Back to Module Selection"
+            )
+
+            # Menu Selection Check based on the above message
+            while True:
+                menu = int(input("\nChoose an option (1-2): "))
+
+                if menu in range(1, 3):
+                    break
+                else:
+                    print("Invalid choice. Please enter 1 to view the complete transactions or 2 to go back.")
+                    continue
+
+            if menu == 1:
+                analysis.ExpenseAnalysis.getExpenseAnalysis(cur=cur, userID=userID)
+            elif menu == 2:
+                Controller.application(conn=conn, cur=cur, userID=userID)
+                return
+
+            Controller.expenseAnalysisAction(conn=conn, cur=cur, userID=userID)
+
+        except Exception as e:
+            print(f"\nError in Expense Analysis Module: {e}\nPlease try again later.")
