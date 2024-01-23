@@ -5,6 +5,7 @@ import src.main.python.bankintegrations as bank
 import src.main.python.expensecategories as expcat
 import src.main.python.incometracking as income
 import src.main.python.expenselogging as expense
+import src.main.python.transactionhistory as transhist
 
 class Controller:
     def __init__(self) -> None:
@@ -93,7 +94,7 @@ class Controller:
             elif module == 5:  # Expense Logging Section
                 Controller.expenseLoggingAction(conn=conn, cur=cur, userID=userID)
             elif module == 6:  # Transaction History Section
-                print("Transaction History")
+                Controller.transactionHistoryAction(conn=conn, cur=cur, userID=userID)
             elif module == 7:  # Expense Analysis Section
                 print("Expense Analysis")
             elif module == 8:  # Data Export Section
@@ -312,3 +313,34 @@ class Controller:
 
         except Exception as e:
             print(f"\nError in Expense Logging Module: {e}\nPlease try again later.")
+
+    @staticmethod
+    def transactionHistoryAction(conn, cur, userID):
+        try:
+            # Transaction History Module Selection
+            print(
+                "\nTransaction History:"
+                "\n1. Get All Transactions"
+                "\n2. Back to Module Selection"
+            )
+
+            # Menu Selection Check based on the above message
+            while True:
+                menu = int(input("\nChoose an option (1-2): "))
+
+                if menu in range(1, 3):
+                    break
+                else:
+                    print("Invalid choice. Please enter 1 to view the complete transactions or 2 to go back.")
+                    continue
+
+            if menu == 1:
+                transhist.TransactionHistory.getTransactionHistory(cur=cur, userID=userID)
+            elif menu == 2:
+                Controller.application(conn=conn, cur=cur, userID=userID)
+                return
+
+            Controller.transactionHistoryAction(conn=conn, cur=cur, userID=userID)
+
+        except Exception as e:
+            print(f"\nError in Transaction History Module: {e}\nPlease try again later.")
