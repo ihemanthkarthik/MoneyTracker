@@ -7,6 +7,6 @@ controller.py          87     87     0%
 logger.py               8      8     0%
 main.py                12     12     0%
 setupdb.py             19     19     0%
-userprofile.py         90     90     0%
+userprofile.py        104    104     0%
 ---------------------------------------
-TOTAL                 344    344     0%
+TOTAL                 358    358     0%

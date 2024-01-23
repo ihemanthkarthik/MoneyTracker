@@ -132,7 +132,7 @@ class controller():
             elif menu == 4:
                 profile.userProfile.delAccount(conn=conn, cur=cur, userID=userID)
             elif menu == 5:
-                print("Upgrade to Premium Account")
+                profile.userProfile.upgradeAccount(conn=conn, cur=cur, userID=userID)
             elif menu == 6:
                 print("You are successfully logged out!")
                 controller.authentication(conn=conn, cur=cur)

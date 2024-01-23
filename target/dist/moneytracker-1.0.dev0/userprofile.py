@@ -152,3 +152,26 @@ class userProfile:
 
         except Exception as e:
             print(e)
+
+    # Upgrade Account
+    def upgradeAccount(conn, cur, userID):
+        try:
+            # Get the license key to Upgrade to Premium Account
+            license = int(input("Enter the license code to upgrade: "))
+
+            if license == 12345:
+                cur.execute("UPDATE Users SET PremiumUser = 'Y' WHERE UserID = ?", (userID,))
+                upgrade = cur.rowcount
+
+                if upgrade > 0:
+                    log.logger.insertlog(conn=conn, cur=cur, userID=userID, transID=0,
+                                         message="User upgraded to premium user!")
+                    conn.commit()
+                    print("Congratulations! You now have been upgraded to premium user!")
+                else:
+                    raise dbe.OperationalError("User Profile Deletion Failed")
+            else:
+                raise Exception("Your License Code is Invalid!")
+
+        except Exception as e:
+            print(e)
