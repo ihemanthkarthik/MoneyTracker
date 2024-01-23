@@ -12,6 +12,7 @@ copying authentication.py -> build\lib
 copying bankintegrations.py -> build\lib
 copying connection.py -> build\lib
 copying controller.py -> build\lib
+copying expensecategories.py -> build\lib
 copying logger.py -> build\lib
 copying main.py -> build\lib
 copying setupdb.py -> build\lib
@@ -39,6 +40,7 @@ copying build\lib\authentication.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\bankintegrations.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\connection.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\controller.py -> build\bdist.win-amd64\wheel\.
+copying build\lib\expensecategories.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\logger.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\main.py -> build\bdist.win-amd64\wheel\.
 copying build\lib\setupdb.py -> build\bdist.win-amd64\wheel\.
@@ -61,6 +63,7 @@ adding 'authentication.py'
 adding 'bankintegrations.py'
 adding 'connection.py'
 adding 'controller.py'
+adding 'expensecategories.py'
 adding 'logger.py'
 adding 'main.py'
 adding 'setupdb.py'
