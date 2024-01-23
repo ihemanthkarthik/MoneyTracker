@@ -4,6 +4,7 @@ import src.main.python.userprofile as profile
 import src.main.python.bankintegrations as bank
 import src.main.python.expensecategories as expcat
 import src.main.python.incometracking as income
+import src.main.python.expenselogging as expense
 
 class Controller:
     def __init__(self) -> None:
@@ -90,7 +91,7 @@ class Controller:
             elif module == 4:  # Income Tracking Section
                 Controller.incomeTrackingAction(conn=conn, cur=cur, userID=userID)
             elif module == 5:  # Expense Logging Section
-                print("Expense Logging")
+                Controller.expenseLoggingAction(conn=conn, cur=cur, userID=userID)
             elif module == 6:  # Transaction History Section
                 print("Transaction History")
             elif module == 7:  # Expense Analysis Section
@@ -271,3 +272,42 @@ class Controller:
 
         except Exception as e:
             print(f"\nError in Income Tracking Module: {e}\nPlease try again later.")
+
+    def expenseLoggingAction(conn, cur, userID):
+        try:
+            # Expense Logging Module Selection
+            print(
+                "\nExpense Logging:"
+                "\n1. Get All Expense Transactions"
+                "\n2. Add an Expense Transaction"
+                "\n3. Update an Expense Transaction"
+                "\n4. Delete an Expense Transaction"
+                "\n5. Back to Module Selection"
+            )
+
+            # Menu Selection Check based on the above message
+            while True:
+                menu = int(input("\nChoose an option (1-5): "))
+
+                if menu in range(1, 6):
+                    break
+                else:
+                    print("Invalid choice. Please enter a number between 1 to 5.")
+                    continue
+
+            if menu == 1:
+                expense.ExpenseLogging.getExpenseTransactions(cur=cur, userID=userID)
+            elif menu == 2:
+                print("Add an Expense Transaction")
+            elif menu == 3:
+                print("Update an Expense Transaction")
+            elif menu == 4:
+                print("Delete an Expense Transaction")
+            elif menu == 5:
+                Controller.application(conn=conn, cur=cur, userID=userID)
+                return
+
+            Controller.expenseLoggingAction(conn=conn, cur=cur, userID=userID)
+
+        except Exception as e:
+            print(f"\nError in Expense Logging Module: {e}\nPlease try again later.")
