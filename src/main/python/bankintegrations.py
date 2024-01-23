@@ -119,3 +119,69 @@ class BankIntegration:
 
         except Exception as e:
             print(e)
+
+    # Modifying Bank Details
+    @staticmethod
+    def updBankAccount(conn, cur, userID):
+        try:
+            bankID = BankIntegration.getBankID(cur=cur, userID=userID)
+
+            if bankID > 0:
+                cur.execute("SELECT AccountNumber, BankName from BankDetails WHERE UserID = ? AND BankID = ?",
+                            (userID, bankID))
+
+                values = cur.fetchone()
+
+                # Menu Selection Check based on the above message
+                while True:
+                    # Print the update options
+                    print(
+                        "\n1. Account Number"
+                        "\n2. Bank Name"
+                        "\n3. Confirm Changes"
+                        "\n4. Cancel Bank Account updation"
+                    )
+
+                    menu = int(
+                        input("Please enter a number between (1-2) to make changes and 3 to confirm changes and 4 "
+                              "to cancel: "))
+
+                    if menu == 3:
+                        break
+                    elif menu in range(1, 3):
+                        # Get the updated information
+                        if menu == 1:
+                            accNumber = input("Enter the last 4 digits of the account number you want to update: ")
+                            values = (accNumber,) + values[1:]  # Update Account Number
+                        elif menu == 2:
+                            bankName = input("Enter the bank name you want to update: ")
+                            values = (values[0], bankName)  # Update Bank Name
+                        continue
+                    else:
+                        print("Invalid choice. Please enter a number between (1-2) to make changes and 3 to confirm "
+                              "changes and 4 to cancel: ")
+                        continue
+
+                # Update the Changes
+                if menu == 3:
+                    # Update the bank account
+                    cur.execute(
+                        "UPDATE BankDetails SET AccountNumber = ?, BankName = ? WHERE UserID = ? AND BankID = ?",
+                        (values[0], values[1], userID, bankID))
+                    # Check if the bank account was updated
+                    if cur.rowcount > 0:
+                        # Log the update
+                        log.Logger.insertlog(cur=cur, userID=userID, transID=0,
+                                             message="Bank Account updated "
+                                                     "successfully")
+                        conn.commit()
+                        print("Your bank account has been updated successfully!")
+                    else:
+                        raise dbe.OperationalError("Unexpected Error Encountered! Sorry for the inconvenience")
+                elif menu == 4:
+                    return
+            else:
+                print("No Bank Accounts found to update!")
+
+        except Exception as e:
+            print(e)

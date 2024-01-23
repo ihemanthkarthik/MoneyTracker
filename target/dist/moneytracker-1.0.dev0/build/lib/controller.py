@@ -178,7 +178,7 @@ class Controller:
             elif menu == 2:
                 bank.BankIntegration.addBankAccount(conn=conn,cur=cur,userID=userID)
             elif menu == 3:
-                print("Update Bank Account Details")
+                bank.BankIntegration.updBankAccount(conn=conn,cur=cur,userID=userID)
             elif menu == 4:
                 print("Delete Bank Account")
             elif menu == 5:
@@ -189,3 +189,4 @@ class Controller:
 
         except Exception as e:
             print(f"\nError in Bank Integrations Module: {e}\nPlease try again later.")
+

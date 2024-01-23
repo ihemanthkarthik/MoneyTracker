@@ -5,44 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb050256-1fcd-496f-befe-e52e5fac719e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/python/bankintegrations.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/bankintegrations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/python/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/python/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/python/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/MoneyTracker.egg-info/SOURCES.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/authentication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/setupdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/setupdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/userprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/build/lib/userprofile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/dist/MoneyTracker-1.0.dev0-py3-none-any.whl" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/dist/MoneyTracker-1.0.dev0-py3-none-any.whl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/dist/MoneyTracker-1.0.dev0.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/dist/MoneyTracker-1.0.dev0.tar.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/setupdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/setupdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/userprofile.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/dist/moneytracker-1.0.dev0/userprofile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/logs/install_dependencies/venv_build_install_logs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/TEST-unittest.loader._FailedTest-20240122150608.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/TEST-unittest.loader._FailedTest-20240122150758.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/TEST-unittest.loader._FailedTest-20240122151716.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/TEST-unittest.loader._FailedTest-20240122153008.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/TEST-unittest.loader._FailedTest-20240122155321.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/TEST-unittest.loader._FailedTest-20240122162644.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/moneytracker_coverage" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/moneytracker_coverage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/moneytracker_coverage.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/moneytracker_coverage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/moneytracker_coverage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/moneytracker_coverage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/pybuilder.plugins.python.unittest_plugin.run_unit_tests_coverage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/reports/unittest" beforeDir="false" afterPath="$PROJECT_DIR$/target/reports/unittest" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MNYTRKR-40-MoneyTracker-Bank-Integrations-Update-Bank-Account-Details",
+    "git-widget-placeholder": "MNYTRKR-56-MoneyTracker-Bank-Integrations-Update-Bank-Account-Details",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Code Repository/MoneyTracker"
   },
