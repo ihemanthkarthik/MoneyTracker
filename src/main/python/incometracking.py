@@ -54,3 +54,46 @@ class IncomeTracking:
 
         except Exception as e:
             print(e)
+
+    # Get ExpCatID from for the Selected Expense Category
+    @staticmethod
+    def getTransID(cur, userID):
+        try:
+            # Printing all expense categories for the user to select an expense category
+            bankID = IncomeTracking.getIncomeTransactions(cur=cur, userID=userID)
+
+            if bankID > 0:
+                # Fetching number of Transactions associated with the user account
+                cur.execute("SELECT COUNT(*) from Statement WHERE PaymentType = 'CR' AND UserID = ? AND BankID = ?",
+                            (userID, bankID))
+                rows = cur.fetchone()
+
+                while rows[0] > 0:
+                    while True:
+                        rowNum = int(input("\nPlease enter the row number of the transaction you want to modify: "))
+                        if rowNum <= rows[0]:
+                            break
+                        else:
+                            print("Invalid input! Please enter a valid row number from the displayed transactions.")
+                            continue
+
+                    cur.execute(
+                        "WITH W AS (SELECT ROW_NUMBER() OVER (ORDER BY b.BankName, b.AccountNumber, s.Payee, "
+                        "s.Description, s.TransactionDate) AS RowNum,"
+                        "s.TransID AS TransID "
+                        "FROM Statement s "
+                        "LEFT JOIN BankDetails b ON s.BankID = b.BankID "
+                        "WHERE s.PaymentType = 'CR' AND s.UserID = ? AND s.BankID = ?) "
+                        "SELECT TransID FROM W WHERE RowNum = ?", (userID, bankID, rowNum))
+
+                    transID = cur.fetchone()
+
+                    return transID[0]
+                else:
+                    return 0
+            else:
+                print("No Bank Accounts Found!")
+                return 0
+
+        except Exception as e:
+            print(e)
