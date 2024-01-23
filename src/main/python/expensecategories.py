@@ -19,3 +19,33 @@ class ExpenseCategories:
 
         except Exception as e:
             print(e)
+
+    # Get ExpCatID from for the Selected Expense Category
+    @staticmethod
+    def getExpCatID(conn, cur, userID):
+        try:
+            # Printing all expense categories for the user to select an expense category
+            ExpenseCategories.getExpenseCategories(conn=conn, cur=cur, userID=userID)
+
+            # Fetching number of expense categories associated with the user account
+            cur.execute("SELECT COUNT(*) from ExpenseCategories WHERE UserID = 0 OR UserID = ?", (userID,))
+            rows = cur.fetchone()
+
+            while True:
+                rowNum = int(input("\nPlease enter the row number of the Expense Category: "))
+                if rowNum <= rows[0]:
+                    break
+                else:
+                    print("Invalid input! Please enter a valid row number from the displayed Expense Categories.")
+                    continue
+
+            cur.execute("WITH W AS (SELECT ROW_NUMBER() OVER (ORDER BY ExpCatID, Name) AS RowNum, ExpCatID, Name from "
+                        "ExpenseCategories WHERE UserID = 0 OR UserID = ?)"
+                        "SELECT ExpCatID FROM W WHERE RowNum = ?", (userID, rowNum))
+
+            expCatID = cur.fetchone()
+
+            return expCatID[0]
+
+        except Exception as e:
+            print(e)
