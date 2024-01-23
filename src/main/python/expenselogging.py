@@ -97,3 +97,46 @@ class ExpenseLogging:
 
         except Exception as e:
             print(e)
+
+    # Adding New Expense
+    @staticmethod
+    def addExpenseTransaction(conn, cur, userID):
+        try:
+            # Fetching number of bank accounts associated with the user account
+            cur.execute("SELECT COUNT(*) from BankDetails WHERE UserID = ?", (userID,))
+            rows = cur.fetchone()
+
+            if rows[0] == 1:
+                cur.execute("SELECT BankID from BankDetails WHERE UserID = ?", (userID,))
+                bankDet = cur.fetchone()
+                bankID = bankDet[0]
+            elif rows[0] <= 0:
+                print("Please add a bank account to proceed!")
+                return
+            elif rows[0] > 1:
+                bankID = bank.BankIntegration.getBankID(cur=cur, userID=userID)
+
+            amount = float(input("Please enter the amount: "))
+            payee = input("Please enter the payee: ")
+            expCatID = expense.ExpenseCategories.getExpCatID(cur=cur, userID=userID)
+            desc = input("Please enter the description: ")
+            date = input("Please enter the date(YYYY-MM-DD): ")
+
+            cur.execute(
+                "INSERT INTO Statement (UserID, BankID, Amount, PaymentType, ExpCatID, Payee, Description, "
+                "TransactionDate) VALUES (?, ?, ?, 'DB', ?, ?, ?, ?)",
+                (userID, bankID, amount, expCatID, payee, desc, date))
+            transAdded = cur.rowcount
+
+            transID = cur.lastrowid
+
+            if transAdded > 0:
+                log.Logger.insertlog(cur=cur, userID=userID, transID=transID,
+                                     message="Expense Transaction Added successfully")
+                conn.commit()
+                print("The Mentioned Expense is added successfully!")
+            else:
+                raise dbe.OperationalError("Expense Addition Failed!")
+
+        except Exception as e:
+            print(e)
