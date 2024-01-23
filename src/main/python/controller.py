@@ -221,7 +221,7 @@ class Controller:
             elif menu == 3:
                 expcat.ExpenseCategories.updExpenseCategory(conn=conn, cur=cur, userID=userID)
             elif menu == 4:
-                print("Delete Expense Category")
+                expcat.ExpenseCategories.delExpenseCategory(conn=conn, cur=cur, userID=userID)
             elif menu == 5:
                 Controller.application(conn=conn, cur=cur, userID=userID)
                 return

@@ -135,3 +135,61 @@ class ExpenseCategories:
 
         except Exception as e:
             print(e)
+
+    # Delete Expense Category
+    @staticmethod
+    def delExpenseCategory(conn, cur, userID):
+        try:
+            # Note Message for the User
+            print("\n NOTE: You will be able to modify/delete only the expense categories you added!")
+
+            # Fetching ExpCatID based USer Selection
+            while True:
+                expCatID = ExpenseCategories.getExpCatID(cur=cur, userID=userID)
+
+                cur.execute("SELECT UserID FROM ExpenseCategories WHERE ExpCatID = ?", (expCatID,))
+                usrChk = cur.fetchone()
+
+                if usrChk[0] > 0:
+                    break
+                else:
+                    print("\nInvalid Choice! This is a system added Expense Category!\nYou will only be able to "
+                          "modify/delete the expense categories you added!")
+                    continue
+
+            # Checking if there are any transactions under the Expense Categories
+            cur.execute("SELECT COUNT(1) FROM Statement WHERE UserID = ? AND ExpCatID = ?", (userID, expCatID))
+
+            tranCount = cur.fetchone()
+
+            if tranCount[0] <= 0:
+                # User Input Validation Check
+                while True:
+                    # Getting confirmation from the user for deleting the expense category
+                    confirm = input("WARNING: This will delete your expense category permanently. Would you like to "
+                                    "proceed (Y/N)?")[0].upper()
+
+                    if confirm[0] == "Y" or confirm[0] == "N":
+                        break
+                    else:
+                        print("Invalid choice! Please enter Y  or N ")
+                        continue
+
+                if confirm[0] == "Y":
+                    cur.execute("DELETE FROM ExpenseCategories WHERE ExpCatID = ?", (expCatID,))
+                    expCatDel = cur.rowcount
+
+                    if expCatDel > 0:
+                        log.Logger.insertlog(cur=cur, userID=userID, transID=0, message="Expense Category "
+                                                                                        "Deleted successfully")
+                        conn.commit()
+                        print("Your Expense Category has been deleted successfully!")
+                    else:
+                        raise dbe.OperationalError("Expense Category Deletion Failed")
+                else:
+                    print("Action Cancelled!")
+            else:
+                raise Exception(f"You have {tranCount} transactions under the expense category you are trying to "
+                                f"delete.\nPlease modify the transaction's expense category!")
+        except Exception as e:
+            print(e)
