@@ -14,7 +14,7 @@ A simple application that will help you in keeping track on your credits and exp
 8. [Build Management](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Build-Management)
 9. [Functional Programming](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Functional-Programming)
 10. [Clean Code Development](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Clean-Code-Development)
-11. 
+11. [IDE](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Integrated-Development-Environment-(IDE))
 
 
 # Prerequisites
@@ -67,7 +67,7 @@ Screenshot Reference for the Badge if the above link expires
 # Build Management
 Pybuilder is being used as build automation tool in this project.
 
-![img.png](img.png)
+![PyBuilder - Build Success.png](PyBuilder%20-%20Build%20Success.png)
 
 # Functional Programming
 My Code functionality is not based on the functional programming, but I have added an example of login functionality implementing the functional programming.
@@ -88,4 +88,13 @@ My Code functionality is not based on the functional programming, but I have add
 4. **[Consistent Formatting](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/python/bankintegrations.py)**
 5. **[Comments for Clarity](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/controller.py#L17)**
 
-**[Clean Code Developement - Cheat Sheet](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/controller.py#L17)**
+**[Clean Code Developement - Cheat Sheet](https://github.com/ihemanthkarthik/MoneyTracker/blob/b6b8fad8af12495e325dfd94b7b57a68898c1462/CCD%20-%20Cheat%20Sheet.pdf)**
+
+# Integrated Development Environment (IDE)
+I used Pycharm for developing this application. I frequently use the below shortcuts when coding in Pycharm
+
+1. Ctrl + /     -> Add/remove line or block comment
+2. Alt + F7     -> Find Usages
+3. Ctrl + F     -> Find
+4. Ctrl + R     -> Replace
+5. Shift + F6   -> Refactoring Rename
