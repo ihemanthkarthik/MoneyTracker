@@ -23,10 +23,14 @@ The Git Repository is used for version control and cloud storage medium for appl
 # Requirement-Engineering
 Understanding the requirements for building a software/application is the crucial part of being a software developer. It establishes a solid foundation for the development team to understand the business needs and expectation of users for the application to be built or developed.
 
-**[JIRA](https://hemanthkarthikeyan.atlassian.net/jira/software/projects/MNYTRKR/boards/2/timeline)** - Used for creating user stories and tasks with requirements for developers 
+**[JIRA](https://hemanthkarthikeyan.atlassian.net/jira/software/projects/MNYTRKR/boards/2/timeline)** - Used for creating user stories and tasks with requirements for developers
+
+# Project Analysis
+
+**[Analysis Document](https://github.com/ihemanthkarthik/MoneyTracker/blob/98d65a0ed3e93fe42b23130cbc4dd856d409171e/Analysis.pdf)**
 
 # Domain-Driven-Design(DDD)
-Domain Driven Design (DDD) is the concept of understanding process/ application domains involved in the software related to the business. It defines the problems involved in a particular domain and also further enhances the understanding for the development team. It further enhances the understanding how the requirements are expressed, organized and involved in each domains and together combined to build a solid working application.
+
 
 **[Domain-Driven-Design Document](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/DomainDrivenDesign%20Document.pdf)**
 
@@ -54,6 +58,8 @@ Sonar Cloud is used to analyze the project and code versatility and readability.
 Screenshot Reference for the Badge if the above link expires
 ![img.png](img.png)
 
+# Functional Programming
+My Code functionality is not based on the functional programming, but I have added an example of login functionlity implementing the functional programming.
 
 
 Note: I have just started completed the login module of the application, so I have done the database objects diagram and use case diagram only till the login module.
