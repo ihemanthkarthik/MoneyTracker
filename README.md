@@ -33,7 +33,7 @@ Understanding the requirements for building a software/application is the crucia
 
 **[JIRA](https://hemanthkarthikeyan.atlassian.net/jira/software/projects/MNYTRKR/boards/2/timeline)** - Used for creating user stories and tasks with requirements for developers
 
-**[JIRA Board Screenshot](https://hemanthkarthikeyan.atlassian.net/jira/software/projects/MNYTRKR/boards/2/timeline)** 
+**[JIRA Board Screenshot](https://github.com/ihemanthkarthik/MoneyTracker/blob/f4e96d2517aa1cb38304ad67a14c57f708e18956/Jira%20Board.png)** 
 
 # Project Analysis
 
