@@ -1,13 +1,20 @@
 # MoneyTracker
+![logo-light.png](images%2Flogo-light.png)
+
 A simple application that will help you in keeping track on your credits and expenses daily, as well as providing in each expense category. This app will record credits and daily expenses in each category that the user inputs every day and will provide an overview of their spends in each category in the form of a pie chart.
 
 # Table Of Content
 1. [Prerequisites](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Prerequisites)
 2. [Git Repository](https://github.com/ihemanthkarthik/MoneyTracker/blob/30ad2d3b4b54fe8c2696a948e18721880de1b115/)
 3. [Requirements Engineering](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Requirement-Engineering)
-3. [Domain-Driven-Design](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Domain-Driven-Design(DDD))
-4. [Unified-Modelling-Language](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Unified-Modelling-Language(UML))
-5. [Metrics](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Metrics)
+4. [Project Analysis](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Project-Analysis)
+5. [Domain-Driven-Design](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Domain-Driven-Design(DDD))
+6. [Unified-Modelling-Language](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Unified-Modelling-Language(UML))
+7. [Metrics](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Metrics)
+8. [Build Management](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Build-Management)
+9. [Functional Programming](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Functional-Programming)
+10. [Clean Code Development](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Clean-Code-Development)
+11. 
 
 
 # Prerequisites
@@ -30,7 +37,6 @@ Understanding the requirements for building a software/application is the crucia
 **[Analysis Document](https://github.com/ihemanthkarthik/MoneyTracker/blob/98d65a0ed3e93fe42b23130cbc4dd856d409171e/Analysis.pdf)**
 
 # Domain-Driven-Design(DDD)
-
 
 **[Domain-Driven-Design Document](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/DomainDrivenDesign%20Document.pdf)**
 
@@ -58,8 +64,28 @@ Sonar Cloud is used to analyze the project and code versatility and readability.
 Screenshot Reference for the Badge if the above link expires
 ![img.png](img.png)
 
+# Build Management
+Pybuilder is being used as build automation tool in this project.
+
+![img.png](img.png)
+
 # Functional Programming
-My Code functionality is not based on the functional programming, but I have added an example of login functionlity implementing the functional programming.
+My Code functionality is not based on the functional programming, but I have added an example of login functionality implementing the functional programming.
 
+1. **[Only Final Data Structures](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/funct_programming.py#L9)**
+2. **[Side-Effect-Free Functions](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/funct_programming.py#L66)**
+3. **[Use of Higher Order Functions](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/funct_programming.py#L12)**
+4. **[Functions as parameters and return values](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/funct_programming.py#L15)**
+5. **[Usage of Closures / Anonymous Functions](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/funct_programming.py#L29)**
 
-Note: I have just started completed the login module of the application, so I have done the database objects diagram and use case diagram only till the login module.
+**[Functional Programming File](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/funct_programming.py)**
+
+# Clean Code Development
+
+1. **[Modular Structure](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/connection.py)**
+2. **[Descriptive Naming](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/python/controller.py#L111)**
+3. **[Separation of Concerns](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/authentication.py)**
+4. **[Consistent Formatting](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/python/bankintegrations.py)**
+5. **[Comments for Clarity](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/controller.py#L17)**
+
+**[Clean Code Developement - Cheat Sheet](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/controller.py#L17)**
