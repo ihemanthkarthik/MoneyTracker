@@ -15,7 +15,7 @@ A simple application that will help you in keeping track on your credits and exp
 9. [Functional Programming](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Functional-Programming)
 10. [Clean Code Development](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Clean-Code-Development)
 11. [IDE](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Integrated-Development-Environment-(IDE))
-12. [Test Cases]()
+12. [Test Cases](https://github.com/ihemanthkarthik/MoneyTracker/blob/Master/README.md#Test-Cases)
 
 
 # Prerequisites
@@ -32,6 +32,8 @@ The Git Repository is used for version control and cloud storage medium for appl
 Understanding the requirements for building a software/application is the crucial part of being a software developer. It establishes a solid foundation for the development team to understand the business needs and expectation of users for the application to be built or developed.
 
 **[JIRA](https://hemanthkarthikeyan.atlassian.net/jira/software/projects/MNYTRKR/boards/2/timeline)** - Used for creating user stories and tasks with requirements for developers
+
+**[JIRA Board Screenshot](https://hemanthkarthikeyan.atlassian.net/jira/software/projects/MNYTRKR/boards/2/timeline)** 
 
 # Project Analysis
 
@@ -99,3 +101,9 @@ I used Pycharm for developing this application. I frequently use the below short
 3. Ctrl + F     -> Find
 4. Ctrl + R     -> Replace
 5. Shift + F6   -> Refactoring Rename
+
+# Test Cases
+![Test Cases.png](Test%20Cases.png)
+
+**[Unit Testcase](https://github.com/ihemanthkarthik/MoneyTracker/blob/5f3e66ce3e858c518546623f8339c89ca24e4d1a/src/unittest/python/authentication_tests.py)**
+

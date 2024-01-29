@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Unit Test" />
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -46,7 +46,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python tests.Python tests for src.unittest.python.authentication_tests.MyTestCase.TestLoginFunction.test_successful_login.executor": "Run",
     "Python tests.Python tests for src.unittest.python.authentication_tests.MyTestCase.test_successful_login.executor": "Run",
-    "Python.authentication_tests.executor": "Debug",
+    "Python.authentication_tests.executor": "Run",
     "Python.bankintegrations.executor": "Run",
     "Python.connection.executor": "Run",
     "Python.controller.executor": "Run",
@@ -57,9 +57,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MNYTRKR-70-Readme-Updation",
+    "git-widget-placeholder": "fdd1b863",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Local/MoneyTracker"
+    "last_opened_file_path": "D:/Local/MNYTRKR"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
