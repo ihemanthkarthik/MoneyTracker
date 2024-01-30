@@ -29,11 +29,13 @@ The Git Repository is used for version control and cloud storage medium for appl
 **[GIT](https://github.com/ihemanthkarthik/MoneyTracker/blob/30ad2d3b4b54fe8c2696a948e18721880de1b115/)**
 
 # Requirement-Engineering
-Understanding the requirements for building a software/application is the crucial part of being a software developer. It establishes a solid foundation for the development team to understand the business needs and expectation of users for the application to be built or developed.
+I have used Jira and Trello for User Story Development and Task Management. Please find below the links for the same
 
 **[JIRA](https://hemanthkarthikeyan.atlassian.net/jira/software/projects/MNYTRKR/boards/2/timeline)** - Used for creating user stories and tasks with requirements for developers
 
 **[JIRA Board Screenshot](https://github.com/ihemanthkarthik/MoneyTracker/blob/f4e96d2517aa1cb38304ad67a14c57f708e18956/Jira%20Board.png)** 
+
+**[Trello](https://trello.com/invite/b/XJw5llFB/ATTIa77460d9d92550be9044c4e82d5a9b8e713D89F9/moneytracker)**
 
 # Project Analysis
 
