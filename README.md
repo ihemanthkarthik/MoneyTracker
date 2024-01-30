@@ -87,11 +87,11 @@ My Code functionality is not based on the functional programming, but I have add
 
 # Clean Code Development
 
-1. **[Modular Structure](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/connection.py)**
-2. **[Descriptive Naming](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/python/controller.py#L111)**
-3. **[Separation of Concerns](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/authentication.py)**
+1. **[Modular Structure](https://github.com/ihemanthkarthik/MoneyTracker/blob/bc8ca2606e1ac479f47b5a2575682b1620aa54b0/src/main/python/connection.py)**
+2. **[Descriptive Naming](https://github.com/ihemanthkarthik/MoneyTracker/blob/bc8ca2606e1ac479f47b5a2575682b1620aa54b0/src/main/python/controller.py#L111)**
+3. **[Separation of Concerns](https://github.com/ihemanthkarthik/MoneyTracker/blob/bc8ca2606e1ac479f47b5a2575682b1620aa54b0/src/main/python/authentication.py)**
 4. **[Consistent Formatting](https://github.com/ihemanthkarthik/MoneyTracker/blob/7dda87a03e65dcc9ff7b3c64cab89b3bdca318cc/src/main/python/bankintegrations.py)**
-5. **[Comments for Clarity](https://github.com/ihemanthkarthik/MNYTRKR/blob/997960f3d891f462d400b1e7e7cd2ce9a58afbd4/src/controller.py#L17)**
+5. **[Comments for Clarity](https://github.com/ihemanthkarthik/MoneyTracker/blob/bc8ca2606e1ac479f47b5a2575682b1620aa54b0/src/main/python/controller.py#L17)**
 
 **[Clean Code Developement - Cheat Sheet](https://github.com/ihemanthkarthik/MoneyTracker/blob/b6b8fad8af12495e325dfd94b7b57a68898c1462/CCD%20-%20Cheat%20Sheet.pdf)**
 
